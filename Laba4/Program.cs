@@ -8,7 +8,7 @@ namespace Laba4
 {
     public class A
     {
-        private int a = 27;
+        protected int a = 27;
         private int b = 9;
         public int c
         {
@@ -25,15 +25,21 @@ namespace Laba4
         }
         public class B : A
         {
-            private int d = 5;
+            private int d = 15;
 
             public int c2
             {
                 get
                 {
-                    return d %= 3;
+                    if (d < a) return d %= 10;
+                    else return a;
+                }
+                set
+                {
+                    c2 = value;
                 }
             }
+            
         }
         class Programm
         {
